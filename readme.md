@@ -1,5 +1,5 @@
 # HTTP Requests and JSON Contact Management
-<img align="right" src="https://media.giphy.com/media/du3J3cXyzhj75IOgvA/giphy.gif" width="100"/>
+<img align="right" src="https://media.giphy.com/media/du3J3cXyzhj75IOgvA/giphy.gif" width="95"/>
 
 [![GitHub last commit](https://img.shields.io/github/last-commit/kuciapakrystian/rest-api-goit-NodeJS)](https://github.com/kuciapakrystian/rest-api-goit-NodeJS/commits/main)
 [![Node.js Version](https://img.shields.io/badge/Node.js-v20.9.0-green)](https://nodejs.org/)

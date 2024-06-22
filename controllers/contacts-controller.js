@@ -72,4 +72,4 @@ export default {
   addNewContact: ctrlWrapper(addNewContact),
   deleteContact: ctrlWrapper(deleteContact),
   editContact: ctrlWrapper(editContact),
-};
+};dggd

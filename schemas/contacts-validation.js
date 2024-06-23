@@ -5,10 +5,6 @@ const newContactValidation = Joi.object({
     "any.required": '"name" must be exist',
   }),
 
-  phone: Joi.number().integer().required().messages({
-    "any.required": '"phone" must be exist',
-  }),
-
   email: Joi.string()
     .email({
       minDomainSegments: 2,
@@ -18,17 +14,35 @@ const newContactValidation = Joi.object({
     .messages({
       "any.required": '"email" must be exist',
     }),
+
+  phone: Joi.number().integer().required().messages({
+    "any.required": '"phone" must be exist',
+  }),
+
+  favorite: Joi.boolean(),
 });
 
 const contactsEditValidation = Joi.object({
   name: Joi.string().alphanum().min(3).max(20),
 
-  phone: Joi.number().integer(),
-
   email: Joi.string().email({
     minDomainSegments: 2,
     tlds: { allow: ["com", "net"] },
   }),
+
+  phone: Joi.number().integer(),
+
+  favorite: Joi.boolean(),
 });
 
-export { newContactValidation, contactsEditValidation };
+const contactsFavoriteValidation = Joi.object({
+  favorite: Joi.boolean().required().messages({
+    "any.required": "missing field favorite",
+  }),
+});
+
+export {
+  newContactValidation,
+  contactsEditValidation,
+  contactsFavoriteValidation,
+};

@@ -1,19 +1,9 @@
 import { HttpError } from "../helpers/index.js";
 import { ctrlWrapper } from "../decorators/index.js";
-import {
-  newContactValidation,
-  contactsEditValidation,
-} from "../schemas/contacts-validation.js";
-import {
-  addContact,
-  getContactById,
-  listContacts,
-  removeContact,
-  updateContact,
-} from "../models/contacts.js";
+import Contact from "../models/Contact.js";
 
 async function getAllContacts(req, res, next) {
-  const contacts = await listContacts();
+  const contacts = await Contact.find();
   if (contacts) {
     res.json(contacts);
   } else {
@@ -23,7 +13,7 @@ async function getAllContacts(req, res, next) {
 
 async function getContactsById(req, res, next) {
   const id = req.params.contactId;
-  const contactById = await getContactById(id);
+  const contactById = await Contact.findById(id);
   if (contactById) {
     res.json(contactById);
   } else {
@@ -32,17 +22,15 @@ async function getContactsById(req, res, next) {
 }
 
 async function addNewContact(req, res, next) {
-  const { error } = newContactValidation.validate(req.body);
-  if (error) {
-    throw HttpError(400, error.message);
-  }
-  const newContact = await addContact(req.body);
+  const newContact = await Contact.create(req.body);
+  console.log(newContact);
   res.status(201).json(newContact);
 }
 
 async function deleteContact(req, res, next) {
   const id = req.params.contactId;
-  const deleteContact = await removeContact(id);
+  const deleteContact = await Contact.findByIdAndDelete(id);
+  console.log(deleteContact);
   if (deleteContact) {
     res.json({ message: "contact deleted", status: 200 });
   } else {
@@ -51,19 +39,27 @@ async function deleteContact(req, res, next) {
 }
 
 async function editContact(req, res, next) {
-  const { error } = contactsEditValidation.validate(req.body);
-  if (error) {
-    throw HttpError(400, error.message);
-  }
   const id = req.params.contactId;
-  const updatedContact = await updateContact(id, req.body);
-  if (Object.keys(req.body).length === 0) {
-    throw HttpError(404, "missing fields");
-  }
+  const updatedContact = await Contact.findByIdAndUpdate(id, req.body, {
+    new: true,
+  });
   if (!updatedContact) {
     throw HttpError(404, "Not found");
   }
-  res.status(201).json(updatedContact);
+  res.json(updatedContact);
+}
+
+async function updateContact(req, res, next) {
+  const id = req.params.contactId;
+  const updatedContact = await Contact.findByIdAndUpdate(id, req.body, {
+    new: true,
+  });
+
+  if (!updatedContact) {
+    throw HttpError(404, "Not found");
+  }
+
+  res.json(updatedContact);
 }
 
 export default {
@@ -72,4 +68,5 @@ export default {
   addNewContact: ctrlWrapper(addNewContact),
   deleteContact: ctrlWrapper(deleteContact),
   editContact: ctrlWrapper(editContact),
+  updateContact: ctrlWrapper(updateContact),
 };

@@ -5,6 +5,7 @@ import {
   isValidId,
   isEmptyBody,
   isEmptyBodyFavorite,
+  authenticate,
 } from "../../middleware/index.js";
 import {
   newContactValidation,
@@ -13,6 +14,8 @@ import {
 } from "../../schemas/contacts-validation.js";
 
 const router = express.Router();
+
+router.use(authenticate);
 
 router.get("/", contactsRequests.getAllContacts);
 

@@ -18,8 +18,6 @@ const newContactValidation = Joi.object({
   phone: Joi.number().integer().required().messages({
     "any.required": '"phone" must be exist',
   }),
-
-  favorite: Joi.boolean(),
 });
 
 const contactsEditValidation = Joi.object({
@@ -31,8 +29,6 @@ const contactsEditValidation = Joi.object({
   }),
 
   phone: Joi.number().integer(),
-
-  favorite: Joi.boolean(),
 });
 
 const contactsFavoriteValidation = Joi.object({

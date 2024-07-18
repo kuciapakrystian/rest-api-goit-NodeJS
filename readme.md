@@ -1,17 +1,23 @@
-# Node.js, MongoDB, Mongoose, and JWT Authentication with Extended Contact Management
+# External REST API Integration, Avatar Management, and Jest Testing
 
 <img align="right" src="https://media.giphy.com/media/du3J3cXyzhj75IOgvA/giphy.gif" width="100"/>
 
 [![GitHub last commit](https://img.shields.io/github/last-commit/kuciapakrystian/rest-api-goit-NodeJS)](https://github.com/kuciapakrystian/rest-api-goit-NodeJS/commits/main)
-[![Node.js Version](https://img.shields.io/badge/Node.js-v20.9.0-green)](https://nodejs.org/)
-[![Express.js Version](https://img.shields.io/badge/Express.js-v4.19.2-blue)](https://expressjs.com/)
-[![MongoDB](https://img.shields.io/badge/MongoDB-v6.3.0-brightgreen)](https://www.mongodb.com/)
-[![Mongoose Version](https://img.shields.io/badge/Mongoose-v8.4.3-brightgreen)](https://mongoosejs.com/)
-[![JWT](https://img.shields.io/badge/JSON%20Web%20Token-v9.0.2-brightgreen)](https://jwt.io/)
+[![Node.js Version](https://img.shields.io/badge/Node.js-v20.9.0-2B8B27)](https://nodejs.org/)
+[![Express.js Version](https://img.shields.io/badge/Express.js-v4.19.2-000000)](https://expressjs.com/)
+[![MongoDB](https://img.shields.io/badge/MongoDB-v6.3.0-3B9539)](https://www.mongodb.com/)
+[![Mongoose Version](https://img.shields.io/badge/Mongoose-v8.4.3-6B0002)](https://mongoosejs.com/)
+[![JWT](https://img.shields.io/badge/JSON%20Web%20Token-v9.0.2-000000)](https://jwt.io/)
+[![Jest](https://img.shields.io/badge/Jest-v29.7.0-A7001B)](https://jestjs.io/)
+[![Gravatar](https://img.shields.io/badge/Gravatar-v1.8.2-1C78B0)](https://en.gravatar.com/)
 
-## Homework4: Node.js, MongoDB, Mongoose, and JWT Authentication with Extended Contact Management
+Welcome to the fifth homework assignment in the Fullstack Bootcamp, where we continue to build upon the foundation laid by our previous projects, especially those emphasizing HTTP requests. This module signifies a shift in focus towards more advanced features.
+In this stage, we explore the integration of sophisticated functionalities, such as the ability to add avatars for users upon creation. This enhancement not only adds a personalized touch to user profiles but also enriches the overall user experience.
+Additionally, we delve into the world of Jest unit testing, ensuring the reliability and robustness of our application. This step reflects our commitment to delivering high-quality Fullstack solutions. As we integrate these innovations, we look forward to the unfolding possibilities on our journey of continuous skill development.
 
-This is the fourth homework assignment in the Fullstack Bootcamp, building upon the previous projects that focused on HTTP requests, ![JSON](https://img.shields.io/badge/JSON-000000.svg?style=for-the-badge&logo=JSON&logoColor=white) contact management, and ![MongoDB](https://img.shields.io/badge/MongoDB-47A248.svg?style=for-the-badge&logo=mongodb&logoColor=white) integration. This module introduces authentication with ![JSON Web Token](https://img.shields.io/badge/JSON%20Web%20Tokens-000000.svg?style=for-the-badge&logo=JSON-Web-Tokens&logoColor=white) (JWT) and enhances the contact management system with additional features.
+## Homework5: External REST API Integration, Avatar Management, and Jest Testing
+
+The fifth homework assignment builds upon the solid foundation of previous projects, expanding the capabilities of the application to include external REST API integration, avatar management, and Jest testing for enhanced functionality and reliability.
 
 ## API Endpoints
 
@@ -30,12 +36,25 @@ This is the fourth homework assignment in the Fullstack Bootcamp, building upon 
 - **(POST) `/api/users/signin`:** Login and obtain a JWT.
 - **(POST) `/api/users/logout`:** Logout the user.
 - **(GET) `/api/users/current`:** Retrieve information about the currently logged-in user.
+- **(PATCH) `/api/users/avatars`:** Change the user's avatar.
 
 ### Additional Endpoints
 
 - **(GET) `/api/contacts?page=<page_number>&limit=<page_size>`:** Retrieve paginated contacts.
 - **(GET) `/api/contacts?favorite=true`:** Retrieve contacts marked as favorites.
 - **(PATCH) `/api/users`:** Update the user's subscription level.
+
+## Avatar Management
+
+- Avatars are automatically generated for new users using the ![Gravatar](https://img.shields.io/badge/Gravatar-1E8CBE.svg?style=for-the-badge&logo=Gravatar&logoColor=white) package.
+- Introduces a new endpoint `(PATCH) /api/users/avatars` for users to change their avatars.
+- Jimp package is utilized for image processing related to avatars.
+
+## Jest Testing for Login
+
+- Implements ![Jest](https://img.shields.io/badge/Jest-C21325.svg?style=for-the-badge&logo=Jest&logoColor=white) testing to ensure the robustness of the login functionality.
+- Unit tests are created to validate the authentication system, enhancing the overall reliability of the application.
+- Run tests using `npm run test` script defined in the package.json file.
 
 ## Technologies Used
 
@@ -45,6 +64,8 @@ This is the fourth homework assignment in the Fullstack Bootcamp, building upon 
 - ![JSON Web Token](https://img.shields.io/badge/JSON%20Web%20Tokens-000000.svg?style=for-the-badge&logo=JSON-Web-Tokens&logoColor=white): Used for user authentication.
 - ![Express.js](https://img.shields.io/badge/Express-000000.svg?style=for-the-badge&logo=Express&logoColor=white): A web application framework for building RESTful APIs.
 - ![JSON](https://img.shields.io/badge/JSON-000000.svg?style=for-the-badge&logo=JSON&logoColor=white): Data interchange format used in the project.
+- ![Jest](https://img.shields.io/badge/Jest-C21325.svg?style=for-the-badge&logo=Jest&logoColor=white):JavaScript testing framework ensuring code reliability and simplicity.
+- ![Gravatar](https://img.shields.io/badge/Gravatar-1E8CBE.svg?style=for-the-badge&logo=Gravatar&logoColor=white): Global avatar service for user profile images linked to email addresses.
 
 ## Issues
 
@@ -61,5 +82,6 @@ I welcome feedback and suggestions from users to improve the application's funct
 <a href="https://nodejs.org/en/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/nodejs-colored.svg" width="36" height="36" alt="NodeJS" /></a>
 <a href="https://www.mongodb.com/" target="_blank"><img style="margin: 10px" src="https://profilinator.rishav.dev/skills-assets/mongodb-original-wordmark.svg" alt="MongoDB" height="50" /></a>
 <a href="https://expressjs.com/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/express-colored.svg" width="36" height="36" alt="Express" /></a>
+<a href="https://www.jestjs.io/" target="_blank"><img style="margin: 10px" src="https://profilinator.rishav.dev/skills-assets/jest.svg" alt="Jest" height="50" /></a>
 <a href="https://git-scm.com/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" alt="git" width="40" height="40"/></a>
 </div>

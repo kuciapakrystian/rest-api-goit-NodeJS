@@ -1,4 +1,4 @@
-# External REST API Integration, Avatar Management, and Jest Testing
+# Email Verification with Nodemailer
 
 <img align="right" src="https://media.giphy.com/media/du3J3cXyzhj75IOgvA/giphy.gif" width="100"/>
 
@@ -8,16 +8,13 @@
 [![MongoDB](https://img.shields.io/badge/MongoDB-v6.3.0-3B9539)](https://www.mongodb.com/)
 [![Mongoose Version](https://img.shields.io/badge/Mongoose-v8.4.3-6B0002)](https://mongoosejs.com/)
 [![JWT](https://img.shields.io/badge/JSON%20Web%20Token-v9.0.2-000000)](https://jwt.io/)
-[![Jest](https://img.shields.io/badge/Jest-v29.7.0-A7001B)](https://jestjs.io/)
-[![Gravatar](https://img.shields.io/badge/Gravatar-v1.8.2-1C78B0)](https://en.gravatar.com/)
+[![Nodemailer](https://img.shields.io/badge/Nodemailer-v6.9.14-0076C8)](https://nodemailer.com/)
 
-Welcome to the fifth homework assignment in the Fullstack Bootcamp, where we continue to build upon the foundation laid by our previous projects, especially those emphasizing HTTP requests. This module signifies a shift in focus towards more advanced features.
-In this stage, we explore the integration of sophisticated functionalities, such as the ability to add avatars for users upon creation. This enhancement not only adds a personalized touch to user profiles but also enriches the overall user experience.
-Additionally, we delve into the world of Jest unit testing, ensuring the reliability and robustness of our application. This step reflects our commitment to delivering high-quality Fullstack solutions. As we integrate these innovations, we look forward to the unfolding possibilities on our journey of continuous skill development.
+The sixth homework assignment marks a pivotal advancement in our ongoing project, seamlessly building upon the foundations established in prior modules. In this iteration, we introduce a critically important feature—email verification—leveraging the robust capabilities of the Nodemailer API. This module is meticulously crafted with a singular focus: to fortify user security and elevate the precision of access control mechanisms within our application.
 
-## Homework5: External REST API Integration, Avatar Management, and Jest Testing
+## Homework6: Email Verification with Nodemailer
 
-The fifth homework assignment builds upon the solid foundation of previous projects, expanding the capabilities of the application to include external REST API integration, avatar management, and Jest testing for enhanced functionality and reliability.
+The sixth homework assignment builds upon prior projects, introduces a crucial feature—email verification using the Nodemailer API. This module is dedicated to fortifying user security and refining access control within our application.
 
 ## API Endpoints
 
@@ -37,24 +34,14 @@ The fifth homework assignment builds upon the solid foundation of previous proje
 - **(POST) `/api/users/logout`:** Logout the user.
 - **(GET) `/api/users/current`:** Retrieve information about the currently logged-in user.
 - **(PATCH) `/api/users/avatars`:** Change the user's avatar.
+- **(GET) `/api/users/verify/:verificationToken`:** Verify the user's email address using the provided token.
+- **(POST) `/api/users/verify`:** Request a second verification email.
 
 ### Additional Endpoints
 
 - **(GET) `/api/contacts?page=<page_number>&limit=<page_size>`:** Retrieve paginated contacts.
 - **(GET) `/api/contacts?favorite=true`:** Retrieve contacts marked as favorites.
 - **(PATCH) `/api/users`:** Update the user's subscription level.
-
-## Avatar Management
-
-- Avatars are automatically generated for new users using the ![Gravatar](https://img.shields.io/badge/Gravatar-1E8CBE.svg?style=for-the-badge&logo=Gravatar&logoColor=white) package.
-- Introduces a new endpoint `(PATCH) /api/users/avatars` for users to change their avatars.
-- Jimp package is utilized for image processing related to avatars.
-
-## Jest Testing for Login
-
-- Implements ![Jest](https://img.shields.io/badge/Jest-C21325.svg?style=for-the-badge&logo=Jest&logoColor=white) testing to ensure the robustness of the login functionality.
-- Unit tests are created to validate the authentication system, enhancing the overall reliability of the application.
-- Run tests using `npm run test` script defined in the package.json file.
 
 ## Technologies Used
 
@@ -64,8 +51,7 @@ The fifth homework assignment builds upon the solid foundation of previous proje
 - ![JSON Web Token](https://img.shields.io/badge/JSON%20Web%20Tokens-000000.svg?style=for-the-badge&logo=JSON-Web-Tokens&logoColor=white): Used for user authentication.
 - ![Express.js](https://img.shields.io/badge/Express-000000.svg?style=for-the-badge&logo=Express&logoColor=white): A web application framework for building RESTful APIs.
 - ![JSON](https://img.shields.io/badge/JSON-000000.svg?style=for-the-badge&logo=JSON&logoColor=white): Data interchange format used in the project.
-- ![Jest](https://img.shields.io/badge/Jest-C21325.svg?style=for-the-badge&logo=Jest&logoColor=white):JavaScript testing framework ensuring code reliability and simplicity.
-- ![Gravatar](https://img.shields.io/badge/Gravatar-1E8CBE.svg?style=for-the-badge&logo=Gravatar&logoColor=white): Global avatar service for user profile images linked to email addresses.
+- ![Nodemailer](https://img.shields.io/badge/Nodemailer-0076C8.svg?style=for-the-badge&logo=nodemailer&logoColor=white): Email sending module for Node.js.
 
 ## Issues
 
@@ -74,6 +60,7 @@ If you encounter any issues or have suggestions, please [open an issue](https://
 ## Feedback
 
 I welcome feedback and suggestions from users to improve the application's functionality and user experience.
+
 
 ## Languages and Tools:
 
@@ -84,4 +71,5 @@ I welcome feedback and suggestions from users to improve the application's funct
 <a href="https://expressjs.com/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/express-colored.svg" width="36" height="36" alt="Express" /></a>
 <a href="https://www.jestjs.io/" target="_blank"><img style="margin: 10px" src="https://profilinator.rishav.dev/skills-assets/jest.svg" alt="Jest" height="50" /></a>
 <a href="https://git-scm.com/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" alt="git" width="40" height="40"/></a>
+<a href="https://postman.com" target="_blank" rel="noreferrer"><img src="https://www.vectorlogo.zone/logos/getpostman/getpostman-icon.svg" alt="postman" width="40" height="40"/></a>
 </div>
